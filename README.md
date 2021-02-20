@@ -13,6 +13,9 @@
 - Example.Data
   - Data Access Layer
   - **Not implemented yet**
+- Example.Database
+  - SQL Server Database Project
+  - Creates all DB tables and seeds test data
 - Example.Service
   - Service Layer
   - Contains all services and converters for the entity types

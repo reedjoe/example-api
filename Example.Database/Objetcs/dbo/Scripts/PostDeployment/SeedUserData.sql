@@ -1,7 +1,7 @@
 ﻿/*
 Post-Deployment Script - Seed User Data							
 --------------------------------------------------------------------------------------
- This script seeds test data for the Users data				
+ This script seeds test data for the Users table				
 --------------------------------------------------------------------------------------
 */
 BEGIN TRY
