@@ -1,9 +1,0 @@
-C:\Users\User\source\repos\TestWebApplication\Example.Core\bin\Debug\netstandard2.0\Example.Core.deps.json
-C:\Users\User\source\repos\TestWebApplication\Example.Core\bin\Debug\netstandard2.0\Example.Core.dll
-C:\Users\User\source\repos\TestWebApplication\Example.Core\bin\Debug\netstandard2.0\Example.Core.pdb
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.csprojAssemblyReference.cache
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.AssemblyInfoInputs.cache
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.AssemblyInfo.cs
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.dll
-C:\Users\User\source\repos\TestWebApplication\Example.Core\obj\Debug\netstandard2.0\Example.Core.pdb
