@@ -20,7 +20,13 @@ namespace Example.API.Controllers
         [HttpGet("list")]
         public async Task<ActionResult<ListUserDto>> ListUsers()
         {
-            return Ok(await userService.ListUsersAsync());
+            return Ok(await userService.ListUsers());
+        }
+
+        [HttpPost("create")]
+        public async Task<ActionResult<Guid>> CreateUser([FromBody] CreateUserDto user)
+        {
+            return Ok(await userService.CreateUser(user));
         }
     }
 }

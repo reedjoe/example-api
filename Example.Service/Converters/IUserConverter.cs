@@ -8,6 +8,8 @@ namespace Example.Service.Converters
 {
     public interface IUserConverter
     {
+        User ConvertCreateUserDtoToUser(CreateUserDto user);
+
         ListUserDto ConvertUserListToDto(List<User> users);
     }
 }
