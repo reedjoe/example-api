@@ -12,7 +12,8 @@
   - Contains: Models, Exceptions, Dtos
 - Example.Data
   - Data Access Layer
-  - **Not implemented yet**
+  - Entity Framework Core
+  - Contains Repositories and DbContext
 - Example.Database
   - SQL Server Database Project
   - Creates all DB tables and seeds test data

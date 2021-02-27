@@ -1,8 +1,10 @@
 using ActionFilters.Api.Filters;
+using Example.Data;
 using Example.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,8 +34,11 @@ namespace TestWebApplication
             services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            ServiceRegistry serviceregistry = new ServiceRegistry(services);
-            serviceregistry.ConfigureAllServices();
+            services.AddDbContext<ExampleDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ExampleDatabase")));
+
+            ServiceRegistry.ConfigureAll(services);
+            DataRegistry.ConfigureAll(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

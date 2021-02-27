@@ -4,29 +4,22 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Example.Service
 {
-    public class ServiceRegistry
+    public static class ServiceRegistry
     {
-        private IServiceCollection services;
-
-        public ServiceRegistry(IServiceCollection services)
+        public static void ConfigureAll(IServiceCollection services)
         {
-            this.services = services;
+            ConfigureServices(services);
+            ConfigureConverters(services);
         }
 
-        public void ConfigureAllServices()
+        private static void ConfigureServices(IServiceCollection services)
         {
-            this.ConfigureServices();
-            this.ConfigureConverters();
+            services.AddScoped<IUserService, UserService>();
         }
 
-        private void ConfigureServices()
+        private static void ConfigureConverters(IServiceCollection services)
         {
-            this.services.AddScoped<IUserService, UserService>();
-        }
-
-        private void ConfigureConverters()
-        {
-            this.services.AddScoped<IUserConverter, UserConverter>();
+            services.AddScoped<IUserConverter, UserConverter>();
         }
     }
 }
