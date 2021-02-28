@@ -9,12 +9,23 @@ namespace Example.Service.Converters
 {
     public class UserConverter : IUserConverter
     {
-        public User ConvertCreateUserDtoToUser(CreateUserDto user)
+        public User ConvertCreateUserDtoToUser(CreateUserDto dto)
         {
             return new User()
             {
+                FirstName = dto.FirstName,
+                LastName = dto.LastName
+            };
+        }
+
+        public UserDto ConvertUserToUserDto(User user)
+        {
+            return new UserDto()
+            {
+                Id = user.Id,
                 FirstName = user.FirstName,
-                LastName = user.LastName
+                LastName = user.LastName,
+                FullName = user.FirstName + ' ' + user.LastName
             };
         }
 

@@ -1,4 +1,5 @@
 ﻿using Example.Core.Dto;
+using Example.Core.Exceptions;
 using Example.Core.Model;
 using Example.Data;
 using Example.Service.Converters;
@@ -20,7 +21,19 @@ namespace Example.Service.Services
             this.userConverter = userConverter;
             this.repository = repository;
         }
-        
+
+        public Task<UserDto> GetUser(Guid userId)
+        {
+            User user = repository.User.GetUserById(userId);
+
+            if (user == null)
+            {
+                throw new EntityNotFoundException(nameof(user), userId);
+            }
+
+            return Task.FromResult(this.userConverter.ConvertUserToUserDto(user));
+        }
+
         public Task<ListUserDto> ListUsers()
         {
             var users = repository.User.FindAll().ToList();

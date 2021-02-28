@@ -17,6 +17,12 @@ namespace Example.API.Controllers
             this.userService = userService;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<UserDto>> GetUser(Guid id)
+        {
+            return Ok(await userService.GetUser(id));
+        }
+
         [HttpGet("list")]
         public async Task<ActionResult<ListUserDto>> ListUsers()
         {
