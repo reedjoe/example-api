@@ -1,4 +1,5 @@
 ﻿using Example.Data.Repository;
+using System.Threading.Tasks;
 
 namespace Example.Data
 {
@@ -6,6 +7,6 @@ namespace Example.Data
     {
         IUserRepository User { get; }
 
-        void Save();
+        Task SaveAsync();
     }
 }

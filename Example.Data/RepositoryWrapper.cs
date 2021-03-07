@@ -1,4 +1,5 @@
 ﻿using Example.Data.Repository;
+using System.Threading.Tasks;
 
 namespace Example.Data
 {
@@ -24,9 +25,9 @@ namespace Example.Data
             _context = context;
         }
 
-        public void Save()
+        public async Task SaveAsync()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

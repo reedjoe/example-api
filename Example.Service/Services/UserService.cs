@@ -22,32 +22,32 @@ namespace Example.Service.Services
             this.repository = repository;
         }
 
-        public Task<UserDto> GetUser(Guid userId)
+        public async Task<UserDto> GetUser(Guid userId)
         {
-            User user = repository.User.GetUserById(userId);
+            User user = await repository.User.GetUserByIdAsync(userId);
 
             if (user == null)
             {
                 throw new EntityNotFoundException(nameof(user), userId);
             }
 
-            return Task.FromResult(this.userConverter.ConvertUserToUserDto(user));
+            return this.userConverter.ConvertUserToUserDto(user);
         }
 
-        public Task<ListUserDto> ListUsers()
+        public async Task<ListUserDto> ListUsers()
         {
-            var users = repository.User.FindAll().ToList();
+            var users = await repository.User.FindAllAsync();
 
-            return Task.FromResult(this.userConverter.ConvertUserListToDto(users));
+            return this.userConverter.ConvertUserListToDto(users);
         }
 
-        public Task<Guid> CreateUser(CreateUserDto user)
+        public async Task<Guid> CreateUser(CreateUserDto user)
         {
             User userEntity = this.userConverter.ConvertCreateUserDtoToUser(user);
             repository.User.Create(userEntity);
-            repository.Save();
+            await repository.SaveAsync();
 
-            return Task.FromResult(userEntity.Id);
+            return userEntity.Id;
         }
     }
 }
