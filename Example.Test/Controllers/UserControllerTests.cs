@@ -34,7 +34,7 @@ namespace Example.Test.Controllers
             // Act
             var res = await sut.GetUser(userId);
 
-            //Assert
+            // Assert
             var result = res.Result as OkObjectResult;
             Assert.AreEqual(result.Value, user);
         }
@@ -52,7 +52,7 @@ namespace Example.Test.Controllers
             // Act
             var res = await sut.ListUsers();
 
-            //Assert
+            // Assert
             var result = res.Result as OkObjectResult;
             Assert.AreEqual(result.Value, userList);
         }
@@ -71,7 +71,7 @@ namespace Example.Test.Controllers
             // Act
             var res = await sut.CreateUser(user);
 
-            //Assert
+            // Assert
             var result = res.Result as OkObjectResult;
             Assert.AreEqual(result.Value, userId);
         }

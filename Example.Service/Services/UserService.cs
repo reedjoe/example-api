@@ -4,15 +4,14 @@ using Example.Core.Model;
 using Example.Data;
 using Example.Service.Converters;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Example.Service.Services
 {
     public class UserService : IUserService
     {
-        private readonly IRepositoryWrapper repository;
         private readonly IUserConverter userConverter;
+        private readonly IRepositoryWrapper repository;
 
         public UserService(
             IUserConverter userConverter,

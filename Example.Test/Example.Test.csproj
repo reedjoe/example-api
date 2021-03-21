@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Example.Core\Example.Core.csproj" />
     <ProjectReference Include="..\Example.Data\Example.Data.csproj" />
     <ProjectReference Include="..\Example.Service\Example.Service.csproj" />

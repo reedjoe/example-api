@@ -1,5 +1,4 @@
 ﻿using Example.Core.Dto;
-using Example.Core.Model;
 using System;
 using System.Threading.Tasks;
 

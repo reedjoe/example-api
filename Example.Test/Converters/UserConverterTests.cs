@@ -24,7 +24,7 @@ namespace Example.Test.Converters
             // Act
             var res = sut.ConvertCreateUserDtoToUser(dto);
 
-            //Assert
+            // Assert
             Assert.IsInstanceOfType(res, typeof(User));
             Assert.AreEqual(res.FirstName, dto.FirstName);
             Assert.AreEqual(res.LastName, dto.LastName);
@@ -45,7 +45,7 @@ namespace Example.Test.Converters
             // Act
             var res = sut.ConvertUserToUserDto(user);
 
-            //Assert
+            // Assert
             Assert.IsInstanceOfType(res, typeof(UserDto));
             Assert.AreEqual(res.Id, user.Id);
             Assert.AreEqual(res.FirstName, user.FirstName);
@@ -77,7 +77,7 @@ namespace Example.Test.Converters
             // Act
             var res = sut.ConvertUserListToDto(users);
 
-            //Assert
+            // Assert
             Assert.IsInstanceOfType(res, typeof(ListUserDto));
             for (int i = 0; i < users.Count; i++)
             {
