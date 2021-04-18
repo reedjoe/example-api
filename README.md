@@ -23,4 +23,4 @@
   - To add a new service/converter, configure in `ServiceRegistry.cs`
 - Example.Test
   - Unit Test Project
-  - **Not implemented yet**
+  - Tests for all services, converters and controllers
